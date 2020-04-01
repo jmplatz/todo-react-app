@@ -1,13 +1,150 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+/* Globals */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background: rgb(19, 19, 19);
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Grid */
+.grid-wrapper {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  gap: 1rem;
+  
+  grid-template-rows: 25% auto auto 25%;
+  grid-template-columns: 25% auto auto 25%;
+}
+
+/* Application Container */
+.app {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 2;
+  display: grid;
+  background: #353535;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: visible;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.app:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+                rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-2px) scale(1.01);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Form Styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: end;
+}
+
+input, button {
+  border-radius: 4px;
+  margin: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  border: none;
+}
+
+input {
+  background-color: rgba(255, 255, 255, .3);
+}
+
+/* To do styling */
+#newTodo {
+  grid-column: span 2;
+  width: 66%;
+  color: white;
+  max-height: 50px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, .3)
+}
+
+li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  align-items: center;
+}
+
+.listItem {
+  justify-self: center;
+}
+
+/* Button Styling */
+button {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(48, 86, 200);
+  transform: scale(1.1);
+  transition: 500ms;
+}
+
+.icon {
+  max-width: 50px;
+  max-height: 50px;
+  justify-self: start;
+}
+
+#markDoneButton {
+  font-size: .75em;
+  justify-self: end;
+  align-self: flex-end;
+  max-height: 50px;
+}
+
+/* iPad and smaller */
+@media screen and (max-width: 768px) {
+  .app {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 5;
+    grid-template-rows: 20% 10% 50% 20%;
+    display: grid;
+    align-items: center;
+    background: #353535;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 }
