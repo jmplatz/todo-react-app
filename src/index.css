@@ -43,14 +43,10 @@ body {
   background-repeat: no-repeat;
 }
 
-.app:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
-                rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-2px) scale(1.01);
-}
-
 h1 {
   text-align: center;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Form Styling */
@@ -87,7 +83,7 @@ input {
 
 li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 65% 35%;
   list-style-type: none;
   align-items: center;
 }
@@ -145,4 +141,12 @@ button:hover {
     background-repeat: no-repeat;
   }
 
+}
+
+@media screen and (min-width: 769px) {
+  .app:hover {
+      box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+                  rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+      transform: translateY(-2px) scale(1.01);
+  }
 }
